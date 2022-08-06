@@ -7,6 +7,7 @@ mobileLinks[i].onclick = function () {
       left:0,
       top: 2700,
       behavior: "smooth"});
+      
 }
 
 for (let i=0; i<webLinks.length; i++)
@@ -28,8 +29,7 @@ webLinks[i].onclick = function () {
 $('.gallery').slick({
     arrows: true,
     dots: true
-}
-);
+});
 
  //Button form
  function closeForm() {
@@ -75,23 +75,29 @@ $("#country_selector1").countrySelect({
     defaultCountry: "ua",
     excludeCountries: ['ru','by'],
     responsiveDropdown: true,
+    // preferredCountries: ["ca", "gb", "us"],
   });
 
     // Automatical download PDF file
-    let pdfUrl = "files/DV_print-and-play.pdf";
+    let pdfUrl = "files/DV_print-and-play_manual_cc.pdf";
+    
     $('.js-submit-form').on('submit', function (event) {
         event.preventDefault();
+        console.log("works!")
+        document.getElementById('btn1').disabled = true;
+        document.getElementById('btn2').disabled = true;
+        document.getElementById('spiner1').style.display = "inline-block";
+        document.getElementById('spiner2').style.display = "inline-block";
         const url = $(this).attr('action'),
         data = $(this).serialize();
-
 
         $.ajax({
           type: 'POST',
           url: url,
           data: data,
           success: function(result){
-            window.open(pdfUrl,  '_blank');
             window.open('thnankyoupage/thank.html', '_self');
+            window.open(pdfUrl,  '_blank');
             event.target.reset();
             $('.ordenary-form').removeClass('is-visible');
             
@@ -100,6 +106,8 @@ $("#country_selector1").countrySelect({
           }
         });
     });
+
+
 
 
 

@@ -399,6 +399,7 @@ section {
                 color: white;
             }
 
+
             .arrow {
                 cursor: pointer;
                 text-align: end;
@@ -511,10 +512,11 @@ section {
                 }
             }
         }
-        
+
         &__download-container:hover {
             background-color: #993541;
         }
+
 
     }
 
@@ -598,6 +600,10 @@ section {
                 margin-bottom: 15px;
             }
 
+            .fa {
+                display: none;
+                margin-left: 10px;
+            }
         }
     }
 }

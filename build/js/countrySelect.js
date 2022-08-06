@@ -20,9 +20,9 @@
 		// don't display these countries
 		excludeCountries: [],
 		// Display only these countries
-		onlyCountries: [ "us", "ca"],
+		onlyCountries: ["us", "ca"],
 		// The countries at the top of the list. Defaults to United States and United Kingdom
-		preferredCountries: [ ],
+		preferredCountries: [""],
 		// localized country names e.g. { 'de': 'Deutschland' }
 		localizedCountries: null,
 		// Set the dropdown's width to be the same as the input. This is automatically enabled for small screens.
